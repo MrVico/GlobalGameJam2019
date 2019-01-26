@@ -168,7 +168,7 @@ public class PlayerControls : MonoBehaviour {
        return calcPointsCasteljau(tempList, ptsControlesCount - 1, u);
         
     }
-
+    
     void WallJump() {
         GetComponent<Rigidbody2D>().AddForce(new Vector2(wallJumpPushForce, wallJumpForce));
         Debug.Log("Frames since last wall jump: " + framesSinceLastWallJump);

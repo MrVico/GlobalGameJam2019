@@ -20,7 +20,7 @@ public class AppleManager : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.name == "Player")
+        if(collider.gameObject.tag.Equals("Player"))
         {
             stares.SetActive(true);
             gameObject.SetActive(false);

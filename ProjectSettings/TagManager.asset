@@ -13,6 +13,8 @@ TagManager:
   - SpeedUp
   - Bonus
   - Water
+  - Box
+  - Secret
   layers:
   - Default
   - TransparentFX
