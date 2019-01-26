@@ -1994,7 +1994,7 @@ GameObject:
   - component: {fileID: 371742865}
   m_Layer: 10
   m_Name: Stares (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2346,7 +2346,7 @@ GameObject:
   - component: {fileID: 423685186}
   m_Layer: 10
   m_Name: Stares (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3465,7 +3465,7 @@ GameObject:
   - component: {fileID: 741116587}
   m_Layer: 10
   m_Name: Stares (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5143,7 +5143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1189546130
 Transform:
   m_ObjectHideFlags: 0
@@ -5152,7 +5152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1189546129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.425003, y: 3.5593276, z: 0.0234375}
+  m_LocalPosition: {x: 7.425003, y: 2.26, z: 0.0234375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1803533981}
@@ -5196,7 +5196,7 @@ GameObject:
   - component: {fileID: 1250566776}
   m_Layer: 10
   m_Name: Stares (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7232,7 +7232,7 @@ GameObject:
   - component: {fileID: 1803533982}
   m_Layer: 10
   m_Name: Stare
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8195,6 +8195,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1550432286}
     - target: {fileID: 3740903707088636992, guid: 56c95e14b6b0ca741b56e80b5e8b3939,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: c0474cded5645d14aa01df9757c69b9e, type: 2}
+    - target: {fileID: 4403751656741274514, guid: 56c95e14b6b0ca741b56e80b5e8b3939,
         type: 3}
       propertyPath: m_Material
       value: 

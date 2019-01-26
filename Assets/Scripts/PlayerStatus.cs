@@ -28,7 +28,7 @@ public class PlayerStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -109,7 +109,7 @@ public class PlayerStatus : MonoBehaviour
     {
         if (collider.tag == "Water")
         {
-            loseHP();
+            lives--;
             if (lives > 0)
                 gm.spawnPlayer();
             else
