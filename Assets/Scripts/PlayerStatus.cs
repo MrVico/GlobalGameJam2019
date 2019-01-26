@@ -8,6 +8,7 @@ public class PlayerStatus : MonoBehaviour
     [SerializeField] GameManagerScript gm;
     [SerializeField] int maxHP = 3;
     [SerializeField] bool invincible = false;
+    public bool bananaMode;
     [SerializeField] Image hp1;
     [SerializeField] Image hp2;
     [SerializeField] Image hp3;
@@ -20,7 +21,8 @@ public class PlayerStatus : MonoBehaviour
     void Start()
     {
         hp = maxHP;
-        healthTxt.text = "x " + hp;
+        if(healthTxt)
+            healthTxt.text = "x " + hp;
     }
 
     // Update is called once per frame

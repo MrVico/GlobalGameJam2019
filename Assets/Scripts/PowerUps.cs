@@ -47,12 +47,15 @@ public class PowerUps : MonoBehaviour
                 player.GetComponent<PlayerStatus>().SendMessage("gainHP");
             }   
         }
-
         else if(gameObject.tag == "Bonus")
         {
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
             gainBonus();
+        }
+        else if (gameObject.tag == "BananaGun")
+        {
+            player.GetComponent<PlayerStatus>().bananaMode = true;
         }
     }
     
