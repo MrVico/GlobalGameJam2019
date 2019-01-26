@@ -18,6 +18,8 @@ public class PlayerStatus : MonoBehaviour
     private int hp;
     private int iterInvincibility = 0;
 
+    public bool hasKey = false;
+
     // Start is called before the first frame update
     void Start()
     {
