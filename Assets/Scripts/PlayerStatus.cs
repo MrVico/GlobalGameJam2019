@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class PlayerStatus : MonoBehaviour
 {
-    public GameManagerScript gm;
-    public int maxHP = 3;
-    public bool invincible = false;
-    public Image hp1;
-    public Image hp2;
-    public Image hp3;
-    public Text healthTxt;
+    [SerializeField] GameManagerScript gm;
+    [SerializeField] int maxHP = 3;
+    [SerializeField] bool invincible = false;
+    [SerializeField] Image hp1;
+    [SerializeField] Image hp2;
+    [SerializeField] Image hp3;
+    [SerializeField] Text healthTxt;
 
     private int hp;
     private int iterInvincibility = 0;

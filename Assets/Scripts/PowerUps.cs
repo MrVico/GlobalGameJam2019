@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class PowerUps : MonoBehaviour
 {
-    public GameObject player;
-
-    public GameManagerScript gm;
+    [SerializeField] GameObject player;
+    [SerializeField] GameManagerScript gm;
 
     private float speedMultiplier = 2f;
 

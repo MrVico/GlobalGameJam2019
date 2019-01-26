@@ -4,19 +4,21 @@ using System.Collections;
 public class PlayerControls : MonoBehaviour {
 
     public float moveSpeed = 10f;
-    bool facingRight = true;
 
-    //sets up the grounded stuff
+    [SerializeField] Transform groundCheck;
+    [SerializeField] Transform wallCheck;
+    [SerializeField] LayerMask whatIsGround;
+    [SerializeField] LayerMask whatIsWall;
+    [SerializeField] float jumpForce = 700f;
+    [SerializeField] float jumpPushForce = 10f;
+    [SerializeField] float wallJumpForce = 700f;
+    [SerializeField] float wallJumpPushForce = 10f;
+
+    bool facingRight = true;    
     bool grounded = false;
     bool touchingWall = false;
-    public Transform groundCheck;
-    public Transform wallCheck;
     float groundRadius = 0.2f;
     float wallTouchRadius = 0.5f;
-    public LayerMask whatIsGround;
-    public LayerMask whatIsWall;
-    public float jumpForce = 700f;
-    public float jumpPushForce = 10f;
 
     //double jump (if needed)
     private bool doubleJump = false;
@@ -24,6 +26,7 @@ public class PlayerControls : MonoBehaviour {
     private bool globalWallTouching = false;
     private string direction = "";
     private int framesSinceWallTouch = 5;
+    private int framesSinceLastWallJump = 0;
 
     /**
 
@@ -65,6 +68,8 @@ public class PlayerControls : MonoBehaviour {
             globalWallTouching = false;
         }
 
+        framesSinceLastWallJump++;
+
         float move = Input.GetAxis("Horizontal");
         
         GetComponent<Rigidbody2D>().velocity = new Vector2(move * moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
@@ -93,7 +98,9 @@ public class PlayerControls : MonoBehaviour {
             */
         }
         
-        if (/*touchingWall*/framesSinceWallTouch < 15 && Input.GetButtonDown("Jump") && ((direction == "LEFT" && facingRight) || (direction == "RIGHT" && !facingRight))) {
+        if (/*touchingWall*/framesSinceWallTouch < 15 && Input.GetButtonDown("Jump") 
+            && ((direction == "LEFT" && facingRight) || (direction == "RIGHT" && !facingRight))
+            && framesSinceLastWallJump > 20) {
             WallJump();
             framesSinceWallTouch = 15;
         }
@@ -101,8 +108,9 @@ public class PlayerControls : MonoBehaviour {
     }
 
     void WallJump() {
-        //GetComponent<Rigidbody2D>().AddForce(new Vector2(jumpPushForce, jumpForce));
-        GetComponent<Rigidbody2D>().AddForce(new Vector2(10, 700));
+        GetComponent<Rigidbody2D>().AddForce(new Vector2(wallJumpPushForce, wallJumpForce));
+        Debug.Log("Frames since last wall jump: " + framesSinceLastWallJump);
+        framesSinceLastWallJump = 0;
     }
 
 

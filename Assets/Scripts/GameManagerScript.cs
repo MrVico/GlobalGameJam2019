@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class GameManagerScript : MonoBehaviour
 {
-    public GameObject startPosition;
-    public GameObject finishPosition;
-    public Transform player;
-    public GameObject loseScreen;
+    [SerializeField] GameObject startPosition;
+    [SerializeField] GameObject finishPosition;
+    [SerializeField] Transform player;
+    [SerializeField] GameObject loseScreen;
 
     // Start is called before the first frame update
     void Start()
