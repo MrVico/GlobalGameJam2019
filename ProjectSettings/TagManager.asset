@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - PowerUp
+  - StartPosition
+  - FinishPosition
   layers:
   - Default
   - TransparentFX

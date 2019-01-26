@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 336231940339183120}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -207,7 +207,7 @@ Animation:
   serializedVersion: 3
   m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 6ee789ca703bf7047b86595da444e91c, type: 2}
+  - {fileID: 0}
   - {fileID: 7400000, guid: 1d18d237f5c7cc64198e6a6c8263e659, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
