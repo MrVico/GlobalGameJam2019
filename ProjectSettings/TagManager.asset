@@ -9,6 +9,8 @@ TagManager:
   - StartPosition
   - FinishPosition
   - Enemy
+  - HealthUp
+  - SpeedUp
   layers:
   - Default
   - TransparentFX

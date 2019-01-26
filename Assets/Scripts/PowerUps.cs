@@ -6,6 +6,8 @@ public class PowerUps : MonoBehaviour
 {
     public GameObject player;
 
+    public GameManagerScript gm;
+
     // Update is called once per frame
     /*
     void Update()
@@ -29,12 +31,25 @@ public class PowerUps : MonoBehaviour
 
     void activatePowerUp()
     {
-        player.GetComponent<Movement>().runSpeed *= 2.5f;
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        StartCoroutine(powerUpTimer());
-        
 
+        if (gameObject.tag == "SpeedUp")
+        {
+            player.GetComponent<Movement>().runSpeed *= 2.5f;
+            StartCoroutine(powerUpTimer());
+        }
+
+        else if(gameObject.tag == "HealthUp")
+        {
+            gainHealth();
+        }
+    }
+
+    public void gainHealth()
+    {
+        GameObject.Find("Player").GetComponent<PlayerStatus>().health++;
+        gm.gainHealth();
     }
 
     IEnumerator powerUpTimer()

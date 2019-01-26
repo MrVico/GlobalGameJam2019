@@ -6,6 +6,7 @@ public class PlayerStatus : MonoBehaviour
 {
 
     public int life;
+    public int health = 3;
     public bool invincible = false;
 
     int iterInvincibility = 0;
@@ -15,16 +16,20 @@ public class PlayerStatus : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Start");
-        life = 3;
+        health = 3;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(life <= 0)
+        if(health <= 0)
         {
             Debug.Log("life = 0");
+            loseLife();
+        }
+
+        if(life == 0)
+        {
             GameOver();
         }
     }
@@ -33,17 +38,24 @@ public class PlayerStatus : MonoBehaviour
     {
         if(collision.collider.tag == "Enemy" && !invincible)
         {
-            life--;
-            if(life > 0)
+            health--;
+            gm.loseHealth();
+            if(health > 0)
             {
                 StartCoroutine(spriteInvincible());
             }  
         }
     }
 
-    public void GameOver()
+    public void loseLife()
     {
         gm.spawnPlayer();
+        life--;
+    }
+
+    public void GameOver()
+    {
+        gm.defeat();
     }
 
     IEnumerator spriteInvincible()
