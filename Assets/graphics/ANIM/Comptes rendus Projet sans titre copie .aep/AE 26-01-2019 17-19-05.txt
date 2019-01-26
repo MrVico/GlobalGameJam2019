@@ -1,0 +1,17 @@
+Adobe After Effects v14.0.1 Windows 64 - Compte rendu du projet Projet sans titre copie .aep
+
+Début du rendu le 26/01/2019 à 17:19:05
+
+  26/01/2019 17:19:05 : début de la composition child_marche.
+
+  Destin. : D:\Bureau\BTS DG 02\PRICECOMPARATOR STAGE\roto exports\poing\child_marche.avi    26/01/2019 17:19:06 : fin de la composition child_marche.
+
+
+  26/01/2019 17:19:06 : début de la composition mom_marche.
+
+  Destin. : D:\Documents\GitHub\GlobalGameJam2019\graphics\ANIM\mom_marche.avi    26/01/2019 17:19:07 : fin de la composition mom_marche.
+
+
+  Temps total écoulé : 2 Secondes
+Compte-rendu terminé le 26/01/2019 à 17:19:07
+

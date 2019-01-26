@@ -1,0 +1,12 @@
+Adobe After Effects v14.0.1 Windows 64 - Compte rendu du projet Projet sans titre copie .aep
+
+Début du rendu le 26/01/2019 à 17:38:41
+
+  26/01/2019 17:38:41 : début de la composition child_idle_content.
+
+  Destin. : D:\Documents\GitHub\GlobalGameJam2019\graphics\ANIM\child_idle_content\child_idle_content_[#####].png      Rendu interrompu par l'utilisateur.    26/01/2019 17:39:38 : fin de la composition child_idle_content.
+
+
+  Temps total écoulé : 57 Secondes
+Compte-rendu terminé le 26/01/2019 à 17:39:38
+
