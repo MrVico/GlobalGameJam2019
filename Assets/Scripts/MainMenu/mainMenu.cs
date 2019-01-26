@@ -20,5 +20,6 @@ public class mainMenu : MonoBehaviour
     public void launchGame()
     {
         SceneManager.LoadScene("GGJ2019 - Copie");
+        Time.timeScale = 1;
     }
 }

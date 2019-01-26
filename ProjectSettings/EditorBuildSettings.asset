@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/GGJ2019 - Copie.unity
+    guid: 64f721ccf98c8884d93f0aa78887682f
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 94850b6868948d44ba909231fcdec850
   m_configObjects: {}

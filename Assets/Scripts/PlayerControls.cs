@@ -123,7 +123,7 @@ public class PlayerControls : MonoBehaviour {
     {
         const float maxAltitude = 2.0f;
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        print(mousePos);
+        //print(mousePos);
         Vector3 vectorDistance = mousePos - bulletSpawn.transform.position;
         float distance = vectorDistance.magnitude;
         //Vector3 vectorDistanceNormalized = vectorDistance.normalized;

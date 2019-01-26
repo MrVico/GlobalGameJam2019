@@ -27,6 +27,7 @@ public class Options : MonoBehaviour
 
     public void displayOptions()
     {
+        Debug.Log("IsDisplayed: " + isDisplayed);
         if (!isDisplayed)
         {
             Time.timeScale = 0;
@@ -45,16 +46,11 @@ public class Options : MonoBehaviour
     public void restartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
     }
 
     public void mainMenu()
     {
         SceneManager.LoadScene("MainMenu");
-    }
-
-    public void ContinueGame()
-    {
-        Time.timeScale = 1;
-        optionsWindow.SetActive(false);
     }
 }
