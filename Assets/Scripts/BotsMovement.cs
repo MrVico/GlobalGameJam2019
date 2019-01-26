@@ -34,11 +34,11 @@ public class BotsMovement : MonoBehaviour
     {
         if (!inverseMove)
         {
-            gameObject.transform.position = new Vector2(gameObject.transform.position.x + 0.05f, gameObject.transform.position.y);
+            gameObject.transform.position = new Vector2(gameObject.transform.position.x + Time.deltaTime * 2.5f, gameObject.transform.position.y);
         }
         else
         {
-            gameObject.transform.position = new Vector2(gameObject.transform.position.x - 0.05f, gameObject.transform.position.y);
+            gameObject.transform.position = new Vector2(gameObject.transform.position.x - Time.deltaTime * 2.5f, gameObject.transform.position.y);
         }
     }
 }

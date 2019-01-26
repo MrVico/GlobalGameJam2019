@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Options : MonoBehaviour
 {
 
-    public GameObject optionsWindow; 
+    public GameObject optionsWindow;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +25,7 @@ public class Options : MonoBehaviour
 
     public void displayOptions()
     {
+        Time.timeScale = 0;
         optionsWindow.SetActive(true);
     }
 
