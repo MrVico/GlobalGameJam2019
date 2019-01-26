@@ -8,6 +8,8 @@ public class PowerUps : MonoBehaviour
 
     public GameManagerScript gm;
 
+    private float speedMultiplier = 2f;
+
     // Update is called once per frame
     /*
     void Update()
@@ -22,7 +24,7 @@ public class PowerUps : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Debug.Log(collider.gameObject.tag);
-        if(collider.name == "Player")
+        if(collider.tag.Equals("Player"))
         {
             activatePowerUp();  
         }
@@ -30,10 +32,9 @@ public class PowerUps : MonoBehaviour
 
     void activatePowerUp()
     {
-
         if (gameObject.tag == "SpeedUp")
         {
-            player.GetComponent<Movement>().runSpeed *= 2.2f;
+            player.GetComponent<PlayerControls>().moveSpeed *= speedMultiplier;
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
             StartCoroutine(powerUpTimer());
@@ -71,7 +72,7 @@ public class PowerUps : MonoBehaviour
     IEnumerator powerUpTimer()
     {
         yield return new WaitForSeconds(5f);
-        player.GetComponent<Movement>().runSpeed /= 2.2f;
+        player.GetComponent<PlayerControls>().moveSpeed /= speedMultiplier;
         Destroy(gameObject);
     }
 }

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerControls : MonoBehaviour {
 
-    public float maxSpeed = 10f;
+    public float moveSpeed = 10f;
     bool facingRight = true;
 
     //sets up the grounded stuff
@@ -23,6 +23,7 @@ public class PlayerControls : MonoBehaviour {
 
     private bool globalWallTouching = false;
     private string direction = "";
+    private int framesSinceWallTouch = 5;
 
     /**
 
@@ -57,14 +58,16 @@ public class PlayerControls : MonoBehaviour {
             }
             grounded = false;
             doubleJump = false;
+            framesSinceWallTouch = 0;
         }
         else {
+            framesSinceWallTouch++;
             globalWallTouching = false;
         }
 
         float move = Input.GetAxis("Horizontal");
-
-        GetComponent<Rigidbody2D>().velocity = new Vector2(move * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
+        
+        GetComponent<Rigidbody2D>().velocity = new Vector2(move * moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
         // If the input is moving the player right and the player is facing left...
         if (move > 0 && !facingRight) {
@@ -77,7 +80,7 @@ public class PlayerControls : MonoBehaviour {
         }
     }
     void Update() {
-
+        
         // If the jump button is pressed and the player is grounded then the player should jump.
         if ((grounded /*|| !doubleJump*/) && Input.GetButtonDown("Jump")) {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
@@ -89,21 +92,21 @@ public class PlayerControls : MonoBehaviour {
             }
             */
         }
-
-
-        if (touchingWall && Input.GetButtonDown("Jump") && ((direction == "LEFT" && facingRight) || (direction == "RIGHT" && !facingRight))) {
+        
+        if (/*touchingWall*/framesSinceWallTouch < 15 && Input.GetButtonDown("Jump") && ((direction == "LEFT" && facingRight) || (direction == "RIGHT" && !facingRight))) {
             WallJump();
+            framesSinceWallTouch = 15;
         }
 
     }
 
     void WallJump() {
-        GetComponent<Rigidbody2D>().AddForce(new Vector2(jumpPushForce, jumpForce));
+        //GetComponent<Rigidbody2D>().AddForce(new Vector2(jumpPushForce, jumpForce));
+        GetComponent<Rigidbody2D>().AddForce(new Vector2(10, 700));
     }
 
 
     void Flip() {
-
         // Switch the way the player is labelled as facing
         facingRight = !facingRight;
 
