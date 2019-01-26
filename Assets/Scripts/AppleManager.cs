@@ -18,9 +18,9 @@ public class AppleManager : MonoBehaviour
         
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collision.collider.name == "Player")
+        if(collider.name == "Player")
         {
             stares.SetActive(true);
             gameObject.SetActive(false);
