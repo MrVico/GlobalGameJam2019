@@ -1,0 +1,12 @@
+Adobe After Effects v14.0.1 Windows 64 - Compte rendu du projet Projet sans titre copie .aep
+
+Début du rendu le 26/01/2019 à 20:37:24
+
+  26/01/2019 20:37:24 : début de la composition anim_jardinporte.
+
+  Destin. : D:\Documents\GitHub\GlobalGameJam2019\graphics\ANIM\anim_jardinporte\anim_jardinporte\anim_jardinporte_[#####].png    26/01/2019 20:38:05 : fin de la composition anim_jardinporte.
+
+
+  Temps total écoulé : 41 Secondes
+Compte-rendu terminé le 26/01/2019 à 20:38:05
+

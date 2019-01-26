@@ -8,6 +8,8 @@ public class Options : MonoBehaviour
 
     public GameObject optionsWindow;
 
+    public bool isDisplayed = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +19,7 @@ public class Options : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             displayOptions();
         }
@@ -25,22 +27,30 @@ public class Options : MonoBehaviour
 
     public void displayOptions()
     {
-        Time.timeScale = 0;
-        optionsWindow.SetActive(true);
+        Debug.Log("IsDisplayed: " + isDisplayed);
+        if (!isDisplayed)
+        {
+            Time.timeScale = 0;
+            isDisplayed = true;
+            optionsWindow.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            isDisplayed = false;
+            optionsWindow.SetActive(false);
+        }
+        
     }
 
     public void restartGame()
     {
-        SceneManager.LoadScene("GGJ2019 - Copie");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
     }
 
     public void mainMenu()
     {
         SceneManager.LoadScene("MainMenu");
-    }
-
-    public void ContinueGame()
-    {
-        optionsWindow.SetActive(false);
     }
 }
