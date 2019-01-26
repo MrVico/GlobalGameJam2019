@@ -11,16 +11,18 @@ public class PlayerStatus : MonoBehaviour
     [SerializeField] Image hp1;
     [SerializeField] Image hp2;
     [SerializeField] Image hp3;
-    [SerializeField] Text healthTxt;
+    [SerializeField] Text lifeTxt;
 
+    private int lives;
     private int hp;
     private int iterInvincibility = 0;
     
     // Start is called before the first frame update
     void Start()
     {
+        lives = 3;
         hp = maxHP;
-        healthTxt.text = "x " + hp;
+        lifeTxt.text = "x " + lives;
     }
 
     // Update is called once per frame
@@ -50,7 +52,6 @@ public class PlayerStatus : MonoBehaviour
 
     private void loseHP() {
         hp--;
-        healthTxt.text = "x " + hp;
         if (hp == 2) {
             hp3.enabled = false;
         }
@@ -59,14 +60,17 @@ public class PlayerStatus : MonoBehaviour
         }
         else if(hp == 0) {
             hp1.enabled = false;
-            GameOver();
+            lives--;
+            lifeTxt.text = "x " + lives;
+            // Player lost a life, reset his hp
+            if(lives > 0)
+                resetHP();
         }
     }
 
     private void gainHP() {
         if(hp < 3) {
             hp++;
-            healthTxt.text = "x " + hp;
             if (hp == 3) {
                 hp3.enabled = true;
             }
@@ -78,7 +82,6 @@ public class PlayerStatus : MonoBehaviour
 
     private void resetHP() {
         hp = maxHP;
-        healthTxt.text = "x " + hp;
         hp1.enabled = true;
         hp2.enabled = true;
         hp3.enabled = true;
@@ -89,7 +92,10 @@ public class PlayerStatus : MonoBehaviour
         if (collider.tag == "Water")
         {
             loseHP();
-            gm.spawnPlayer();
+            if(lives > 0)
+                gm.spawnPlayer();
+            else
+                GameOver();
         }
     }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -41,7 +42,6 @@ public class GameManagerScript : MonoBehaviour
     public void replay()
     {
         loseScreen.SetActive(false);
-        player.SendMessage("resetHP");
-        spawnPlayer(); // Reload the scene?
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
