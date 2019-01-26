@@ -86,6 +86,12 @@ public class PlayerControls : MonoBehaviour {
         framesSinceLastWallJump++;
 
         float move = Input.GetAxis("Horizontal");
+
+        // We are moving
+        if(Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+            animator.SetTrigger("Move");
+        else
+            animator.SetTrigger("Idle");
         
         GetComponent<Rigidbody2D>().velocity = new Vector2(move * moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
