@@ -1,49 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStatus : MonoBehaviour
 {
-
-    public int life;
-    public int health = 3;
-    public bool invincible = false;
-
-    int iterInvincibility = 0;
-
     public GameManagerScript gm;
+    public int maxHP = 3;
+    public bool invincible = false;
+    public Image hp1;
+    public Image hp2;
+    public Image hp3;
+    public Text healthTxt;
 
+    private int hp;
+    private int iterInvincibility = 0;
+    
     // Start is called before the first frame update
     void Start()
     {
-        health = 3;
+        hp = maxHP;
+        healthTxt.text = "x " + hp;
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() 
     {
-        if(health <= 0)
-        {
-            Debug.Log("life = 0");
-            gm.spawnPlayer();
-        }
 
-        if(life == 0)
-        {
-            GameOver();
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.collider.tag == "Enemy" && !invincible)
         {
-            health--;
-            gm.loseHealth();
-            if(health > 0)
-            {
+            loseHP();
+            if(hp > 0) {
                 StartCoroutine(spriteInvincible());
-            }  
+            }
         }
         if(collision.collider.name == "Secret")
         {
@@ -51,10 +44,51 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
+    public int getHP() {
+        return hp;
+    }
+
+    private void loseHP() {
+        hp--;
+        healthTxt.text = "x " + hp;
+        if (hp == 2) {
+            hp3.enabled = false;
+        }
+        else if (hp == 1) {
+            hp2.enabled = false;
+        }
+        else if(hp == 0) {
+            hp1.enabled = false;
+            GameOver();
+        }
+    }
+
+    private void gainHP() {
+        if(hp < 3) {
+            hp++;
+            healthTxt.text = "x " + hp;
+            if (hp == 3) {
+                hp3.enabled = true;
+            }
+            else if (hp == 2) {
+                hp2.enabled = true;
+            }
+        }
+    }
+
+    private void resetHP() {
+        hp = maxHP;
+        healthTxt.text = "x " + hp;
+        hp1.enabled = true;
+        hp2.enabled = true;
+        hp3.enabled = true;
+    }
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.tag == "Water")
         {
+            loseHP();
             gm.spawnPlayer();
         }
     }

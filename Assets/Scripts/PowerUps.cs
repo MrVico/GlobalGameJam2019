@@ -23,7 +23,6 @@ public class PowerUps : MonoBehaviour
     */
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log(collider.gameObject.tag);
         if(collider.tag.Equals("Player"))
         {
             activatePowerUp();  
@@ -42,11 +41,11 @@ public class PowerUps : MonoBehaviour
 
         else if(gameObject.tag == "HealthUp")
         {
-            if (player.gameObject.GetComponent<PlayerStatus>().health < 3)
+            if (player.gameObject.GetComponent<PlayerStatus>().getHP() < 3)
             {
                 gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
-                gainHealth();
+                player.GetComponent<PlayerStatus>().SendMessage("gainHP");
             }   
         }
 
@@ -57,13 +56,7 @@ public class PowerUps : MonoBehaviour
             gainBonus();
         }
     }
-
-    public void gainHealth()
-    {
-        GameObject.Find("Player").GetComponent<PlayerStatus>().health++;
-        gm.gainHealth();
-    }
-
+    
     public void gainBonus()
     {
 

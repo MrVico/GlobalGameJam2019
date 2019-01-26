@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 6091701}
   - component: {fileID: 6091700}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: 2hp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1164,7 +1164,7 @@ GameObject:
   - component: {fileID: 227732603}
   - component: {fileID: 227732602}
   m_Layer: 5
-  m_Name: Image (3)
+  m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2025,7 +2025,7 @@ GameObject:
   - component: {fileID: 368616695}
   - component: {fileID: 368616694}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: 3hp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3757,7 +3757,7 @@ GameObject:
   - component: {fileID: 1021656150}
   - component: {fileID: 1021656149}
   m_Layer: 5
-  m_Name: Image
+  m_Name: 1hp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5408,7 +5408,7 @@ GameObject:
   - component: {fileID: 1550432287}
   - component: {fileID: 1550432286}
   m_Layer: 5
-  m_Name: Text
+  m_Name: hpTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5466,7 +5466,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: x3
 --- !u!222 &1550432287
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7282,6 +7282,36 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 1316280375}
+    - target: {fileID: 6076417068838574762, guid: 56c95e14b6b0ca741b56e80b5e8b3939,
+        type: 3}
+      propertyPath: pv2
+      value: 
+      objectReference: {fileID: 6091698}
+    - target: {fileID: 6076417068838574762, guid: 56c95e14b6b0ca741b56e80b5e8b3939,
+        type: 3}
+      propertyPath: pv3
+      value: 
+      objectReference: {fileID: 368616692}
+    - target: {fileID: 6076417068838574762, guid: 56c95e14b6b0ca741b56e80b5e8b3939,
+        type: 3}
+      propertyPath: healthTxt
+      value: 
+      objectReference: {fileID: 1550432286}
+    - target: {fileID: 6076417068838574762, guid: 56c95e14b6b0ca741b56e80b5e8b3939,
+        type: 3}
+      propertyPath: hp1
+      value: 
+      objectReference: {fileID: 1021656149}
+    - target: {fileID: 6076417068838574762, guid: 56c95e14b6b0ca741b56e80b5e8b3939,
+        type: 3}
+      propertyPath: hp3
+      value: 
+      objectReference: {fileID: 368616694}
+    - target: {fileID: 6076417068838574762, guid: 56c95e14b6b0ca741b56e80b5e8b3939,
+        type: 3}
+      propertyPath: hp2
+      value: 
+      objectReference: {fileID: 6091700}
     - target: {fileID: 2008642508, guid: 56c95e14b6b0ca741b56e80b5e8b3939, type: 3}
       propertyPath: moveSpeed
       value: 7
