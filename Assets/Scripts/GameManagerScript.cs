@@ -13,12 +13,14 @@ public class GameManagerScript : MonoBehaviour
     public GameObject pv2;
     public GameObject pv3;
 
+    public GameObject text;
+
     // Start is called before the first frame update
     void Start()
     {
         startPosition = GameObject.FindGameObjectWithTag("StartPosition");
         finishPosition = GameObject.FindGameObjectWithTag("FinishPosition");
-        spawnPlayer();
+        player.position = startPosition.transform.position;
     }
 
     // Update is called once per frame
@@ -29,11 +31,14 @@ public class GameManagerScript : MonoBehaviour
             spawnPlayer();
             finishPosition.GetComponent<FinishScript>().inverseCollision();
         }
+
+        text.GetComponent<Text>().text = "x " + player.gameObject.GetComponent<PlayerStatus>().life;
     }
 
     public void spawnPlayer()
     {
         player.gameObject.GetComponent<PlayerStatus>().health = 3;
+        player.gameObject.GetComponent<PlayerStatus>().life--;
         pv3.GetComponent<Image>().enabled = true;
         pv2.GetComponent<Image>().enabled = true;
         player.position = startPosition.transform.position;

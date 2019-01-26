@@ -12,6 +12,7 @@ TagManager:
   - HealthUp
   - SpeedUp
   - Bonus
+  - Water
   layers:
   - Default
   - TransparentFX

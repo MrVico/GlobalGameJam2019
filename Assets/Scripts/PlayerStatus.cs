@@ -25,7 +25,7 @@ public class PlayerStatus : MonoBehaviour
         if(health <= 0)
         {
             Debug.Log("life = 0");
-            loseLife();
+            gm.spawnPlayer();
         }
 
         if(life == 0)
@@ -45,12 +45,18 @@ public class PlayerStatus : MonoBehaviour
                 StartCoroutine(spriteInvincible());
             }  
         }
+        if(collision.collider.name == "Secret")
+        {
+            Destroy(collision.gameObject);
+        }
     }
 
-    public void loseLife()
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        gm.spawnPlayer();
-        life--;
+        if (collider.tag == "Water")
+        {
+            gm.spawnPlayer();
+        }
     }
 
     public void GameOver()
