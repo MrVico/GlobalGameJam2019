@@ -36,7 +36,7 @@ public class PowerUps : MonoBehaviour
 
         if (gameObject.tag == "SpeedUp")
         {
-            player.GetComponent<Movement>().runSpeed *= 2.5f;
+            player.GetComponent<Movement>().runSpeed *= 2.2f;
             StartCoroutine(powerUpTimer());
         }
 
@@ -55,7 +55,7 @@ public class PowerUps : MonoBehaviour
     IEnumerator powerUpTimer()
     {
         yield return new WaitForSeconds(5f);
-        player.GetComponent<Movement>().runSpeed /= 2.5f;
+        player.GetComponent<Movement>().runSpeed /= 2.2f;
         Destroy(gameObject);
     }
 }

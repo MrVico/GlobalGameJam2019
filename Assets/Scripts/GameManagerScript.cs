@@ -10,7 +10,6 @@ public class GameManagerScript : MonoBehaviour
     public Transform player;
     public GameObject loseScreen;
 
-    public GameObject pv1;
     public GameObject pv2;
     public GameObject pv3;
 
