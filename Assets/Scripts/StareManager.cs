@@ -26,30 +26,5 @@ public class StareManager : MonoBehaviour
             else
                 stare.SetActive(false);
         }
-        /*
-        if(nextStare != null)
-        {
-            if (Vector2.Distance(new Vector2(player.transform.position.x, player.transform.position.y), new Vector2(nextStare.transform.position.x, nextStare.transform.position.y)) < 2.5)
-            {
-                nextStare.SetActive(true);
-            }
-            else
-            {
-                nextStare.SetActive(false);
-            }
-        }
-
-        if (previousStare != null)
-        {
-            if (Vector2.Distance(new Vector2(player.transform.position.x, player.transform.position.y), new Vector2(previousStare.transform.position.x, previousStare.transform.position.y)) < 2.5)
-            {
-                previousStare.SetActive(true);
-            }
-            else
-            {
-                previousStare.SetActive(false);
-            }
-        }
-        */
     }
 }

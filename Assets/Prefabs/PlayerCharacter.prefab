@@ -210,10 +210,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 057149a7247cfe74ea53d69b0d717fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 3
-  health: 3
-  invincible: 0
   gm: {fileID: 0}
+  maxHP: 3
+  invincible: 0
+  hp1: {fileID: 0}
+  hp2: {fileID: 0}
+  hp3: {fileID: 0}
+  lifeTxt: {fileID: 0}
 --- !u!114 &2008642508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbbce5e21cc1ff3418835c68e7f2f4c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 7
   groundCheck: {fileID: 6804232605354657772}
   wallCheck: {fileID: 720321699}
   whatIsGround:
@@ -237,6 +240,8 @@ MonoBehaviour:
     m_Bits: 2048
   jumpForce: 500
   jumpPushForce: 10
+  wallJumpForce: 700
+  wallJumpPushForce: 10
 --- !u!1 &3067699099256115151
 GameObject:
   m_ObjectHideFlags: 0

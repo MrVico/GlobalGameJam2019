@@ -85,11 +85,12 @@ public class PlayerStatus : MonoBehaviour
         hp1.enabled = true;
         hp2.enabled = true;
         hp3.enabled = true;
+        gm.spawnPlayer();
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag == "Water")
+        if (collider.tag.Equals("Water"))
         {
             loseHP();
             if(lives > 0)

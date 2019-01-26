@@ -7482,29 +7482,9 @@ PrefabInstance:
       objectReference: {fileID: 1316280375}
     - target: {fileID: 6076417068838574762, guid: 56c95e14b6b0ca741b56e80b5e8b3939,
         type: 3}
-      propertyPath: pv2
-      value: 
-      objectReference: {fileID: 6091698}
-    - target: {fileID: 6076417068838574762, guid: 56c95e14b6b0ca741b56e80b5e8b3939,
-        type: 3}
-      propertyPath: pv3
-      value: 
-      objectReference: {fileID: 368616692}
-    - target: {fileID: 6076417068838574762, guid: 56c95e14b6b0ca741b56e80b5e8b3939,
-        type: 3}
-      propertyPath: healthTxt
-      value: 
-      objectReference: {fileID: 1550432286}
-    - target: {fileID: 6076417068838574762, guid: 56c95e14b6b0ca741b56e80b5e8b3939,
-        type: 3}
       propertyPath: hp1
       value: 
       objectReference: {fileID: 1021656149}
-    - target: {fileID: 6076417068838574762, guid: 56c95e14b6b0ca741b56e80b5e8b3939,
-        type: 3}
-      propertyPath: hp3
-      value: 
-      objectReference: {fileID: 368616694}
     - target: {fileID: 6076417068838574762, guid: 56c95e14b6b0ca741b56e80b5e8b3939,
         type: 3}
       propertyPath: hp2
@@ -7512,13 +7492,14 @@ PrefabInstance:
       objectReference: {fileID: 6091700}
     - target: {fileID: 6076417068838574762, guid: 56c95e14b6b0ca741b56e80b5e8b3939,
         type: 3}
+      propertyPath: hp3
+      value: 
+      objectReference: {fileID: 368616694}
+    - target: {fileID: 6076417068838574762, guid: 56c95e14b6b0ca741b56e80b5e8b3939,
+        type: 3}
       propertyPath: lifeTxt
       value: 
       objectReference: {fileID: 1550432286}
-    - target: {fileID: 2008642508, guid: 56c95e14b6b0ca741b56e80b5e8b3939, type: 3}
-      propertyPath: moveSpeed
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56c95e14b6b0ca741b56e80b5e8b3939, type: 3}
 --- !u!4 &2008642507 stripped
