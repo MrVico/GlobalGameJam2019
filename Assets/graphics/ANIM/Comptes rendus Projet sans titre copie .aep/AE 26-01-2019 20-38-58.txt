@@ -1,0 +1,12 @@
+Adobe After Effects v14.0.1 Windows 64 - Compte rendu du projet Projet sans titre copie .aep
+
+Début du rendu le 26/01/2019 à 20:38:58
+
+  26/01/2019 20:38:58 : début de la composition anim_porte.
+
+  Destin. : D:\Documents\GitHub\GlobalGameJam2019\graphics\ANIM\anim_porte\anim_porte\anim_porte_[#####].png    26/01/2019 20:39:03 : fin de la composition anim_porte.
+
+
+  Temps total écoulé : 5 Secondes
+Compte-rendu terminé le 26/01/2019 à 20:39:03
+

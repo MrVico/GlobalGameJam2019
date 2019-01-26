@@ -1,0 +1,22 @@
+Adobe After Effects v14.0.1 Windows 64 - Compte rendu du projet Projet sans titre copie .aep
+
+Début du rendu le 26/01/2019 à 17:40:03
+
+  26/01/2019 17:40:03 : début de la composition child_yeux.
+
+  Destin. : D:\Documents\GitHub\GlobalGameJam2019\graphics\ANIM\child_yeux\child_yeux_[#####].png    26/01/2019 17:40:19 : fin de la composition child_yeux.
+
+
+  26/01/2019 17:40:19 : début de la composition child_idle.
+
+  Destin. : D:\Documents\GitHub\GlobalGameJam2019\graphics\ANIM\child_idle\child_idle_[#####].png    26/01/2019 17:40:24 : fin de la composition child_idle.
+
+
+  26/01/2019 17:40:24 : début de la composition arbre_mechant.
+
+  Destin. : D:\Documents\GitHub\GlobalGameJam2019\graphics\ANIM\arbre_mechant\arbre_mechant_[#####].png    26/01/2019 17:40:48 : fin de la composition arbre_mechant.
+
+
+  Temps total écoulé : 45 Secondes
+Compte-rendu terminé le 26/01/2019 à 17:40:48
+

@@ -1,0 +1,12 @@
+Adobe After Effects v14.0.1 Windows 64 - Compte rendu du projet Projet sans titre copie .aep
+
+Début du rendu le 26/01/2019 à 17:36:26
+
+  26/01/2019 17:36:26 : début de la composition child_saut.
+
+  Destin. : D:\Documents\GitHub\GlobalGameJam2019\graphics\ANIM\child_saut\child_saut_[#####].png    26/01/2019 17:37:48 : fin de la composition child_saut.
+
+
+  Temps total écoulé : 1 min, 22 sec
+Compte-rendu terminé le 26/01/2019 à 17:37:48
+
