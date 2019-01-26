@@ -114,9 +114,10 @@ public class PlayerControls : MonoBehaviour {
             framesSinceWallTouch = 15;
         }
 
+        printLineShooting();
         if (GetComponent<PlayerStatus>().bananaMode && framesSinceLastShoot > nbFrameBetweenShots)//&& Input.GetButtonDown("Fire1")
         {
-            printLineShooting();
+            
             if (Input.GetButtonDown("Fire1"))
             {
                 BananaShoot();
