@@ -7,6 +7,8 @@ public class PlayerControls : MonoBehaviour {
     public float moveSpeed = 10f;
     public int nbFrameBetweenShots;
     public Transform bulletSpawn;
+    public GameObject bullet;
+    public float speedBullet;
     public int nbPointsCourbeShoot;
     public LineRenderer lineRenderer;
     [SerializeField] Transform groundCheck;
@@ -118,18 +120,22 @@ public class PlayerControls : MonoBehaviour {
             framesSinceWallTouch = 15;
         }
 
+        printLineShooting();
         if (GetComponent<PlayerStatus>().bananaMode && framesSinceLastShoot > nbFrameBetweenShots)//&& Input.GetButtonDown("Fire1")
         {
-            printLineShooting();
+            
+            if (Input.GetButtonDown("Fire1"))
+            {
+                BananaShoot();
+            }
             //BananaShoot();
         }
     }
 
-    public void printLineShooting()
+    public Vector3[] printLineShooting()
     {
         const float maxAltitude = 2.0f;
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //print(mousePos);
         Vector3 vectorDistance = mousePos - bulletSpawn.transform.position;
         float distance = vectorDistance.magnitude;
         //Vector3 vectorDistanceNormalized = vectorDistance.normalized;
@@ -146,12 +152,16 @@ public class PlayerControls : MonoBehaviour {
         }
         lineRenderer.positionCount = pointCasteljau.Count;
         lineRenderer.SetPositions(pointCasteljau.ToArray());
+
+        return listControlPoints;
     }
 
     public void BananaShoot()
     {
         //Shoot
-
+        Vector3[] controlesPoints = printLineShooting();
+        GameObject newBullet = GameObject.Instantiate(bullet);
+        newBullet.GetComponent<Bullet>().initialyseBullet(speedBullet,controlesPoints);
         framesSinceLastShoot = 0;
     }
 
