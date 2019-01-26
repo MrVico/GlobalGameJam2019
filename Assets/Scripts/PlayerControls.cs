@@ -32,21 +32,27 @@ public class PlayerControls : MonoBehaviour {
     private int framesSinceWallTouch = 5;
     private int framesSinceLastWallJump = 0;
     private int framesSinceLastShoot;
-    
-    /**
 
-        If he touches the wall for the first time we store his direction
-        The player can then only wall jump if he faces the opposite direction
-
-    **/
+    private Animator animator;
 
     // Use this for initialization
     void Start() {
         framesSinceLastShoot = nbFrameBetweenShots;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void FixedUpdate() {
+
+        // TESTS
+        if (Input.GetKeyDown(KeyCode.A)) {
+            //GameObject.Find("HouseDoor").GetComponent<Animator>().SetTrigger("Open");
+            //GameObject.Find("GardenDoor").GetComponent<Animator>().ResetTrigger("Close");
+        }
+        else if (Input.GetKeyDown(KeyCode.E)) {
+            //GameObject.Find("HouseDoor").GetComponent<Animator>().SetTrigger("Close");
+            //GameObject.Find("GardenDoor").GetComponent<Animator>().ResetTrigger("Open");
+        }
 
         // The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
@@ -96,7 +102,7 @@ public class PlayerControls : MonoBehaviour {
         // If the jump button is pressed and the player is grounded then the player should jump.
         if ((grounded /*|| !doubleJump*/) && Input.GetButtonDown("Jump")) {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
-
+            animator.SetTrigger("Jump");
             // Decomment this if we only want to bounce once off the wall
             /*
             if (!doubleJump && !grounded) {
