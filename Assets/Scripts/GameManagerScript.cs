@@ -26,8 +26,9 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
-    private void spawnPlayer()
+    public void spawnPlayer()
     {
+        player.gameObject.GetComponent<PlayerStatus>().life = 3;
         player.position = startPosition.transform.position;
     }
 }
