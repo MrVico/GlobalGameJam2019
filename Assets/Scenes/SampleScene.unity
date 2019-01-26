@@ -1300,6 +1300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0879fd3a97ff57048bdadf05507f356a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stares: []
   previousStare: {fileID: 2138613704}
   nextStare: {fileID: 0}
 --- !u!60 &399215784
@@ -1992,6 +1993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0879fd3a97ff57048bdadf05507f356a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stares: []
   previousStare: {fileID: 0}
   nextStare: {fileID: 2138613704}
 --- !u!60 &805092675
@@ -3799,23 +3801,6 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 1621723528}
-    - target: {fileID: 6076417068838574762, guid: 56c95e14b6b0ca741b56e80b5e8b3939,
-        type: 3}
-      propertyPath: bananaMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2008642508, guid: 56c95e14b6b0ca741b56e80b5e8b3939, type: 3}
-      propertyPath: bulletSpawn
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2008642508, guid: 56c95e14b6b0ca741b56e80b5e8b3939, type: 3}
-      propertyPath: nbPointsCourbeShoot
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2008642508, guid: 56c95e14b6b0ca741b56e80b5e8b3939, type: 3}
-      propertyPath: nbFrameBetweenShots
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 2008642508, guid: 56c95e14b6b0ca741b56e80b5e8b3939, type: 3}
       propertyPath: lineRenderer
       value: 
@@ -5770,6 +5755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0879fd3a97ff57048bdadf05507f356a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stares: []
   previousStare: {fileID: 805092673}
   nextStare: {fileID: 399215782}
 --- !u!60 &2138613706

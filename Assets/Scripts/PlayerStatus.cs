@@ -23,12 +23,7 @@ public class PlayerStatus : MonoBehaviour
     {
         lives = 3;
         hp = maxHP;
-<<<<<<< HEAD
-        if(healthTxt)
-            healthTxt.text = "x " + hp;
-=======
         lifeTxt.text = "x " + lives;
->>>>>>> 625bb8ceafe03102a2eec39db511872430891245
     }
 
     // Update is called once per frame
