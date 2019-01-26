@@ -63,7 +63,7 @@ public class PowerUps : MonoBehaviour
 
     IEnumerator powerUpTimer()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3.5f);
         player.GetComponent<PlayerControls>().moveSpeed /= speedMultiplier;
         Destroy(gameObject);
     }
