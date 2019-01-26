@@ -16,7 +16,7 @@ public class PlayerStatus : MonoBehaviour
     private int lives;
     private int hp;
     private int iterInvincibility = 0;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,74 +26,91 @@ public class PlayerStatus : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() 
+    void Update()
     {
 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.tag == "Enemy" && !invincible)
+        if (collision.collider.tag == "Enemy" && !invincible)
         {
-            loseHP();
-            if(hp > 0) {
+
+            if (hp > 1)
+            {
                 StartCoroutine(spriteInvincible());
             }
+            loseHP();
+
+
         }
-        if(collision.collider.name == "Secret")
+        if (collision.collider.name == "Secret")
         {
             Destroy(collision.gameObject);
         }
     }
 
-    public int getHP() {
+    public int getHP()
+    {
         return hp;
     }
 
-    private void loseHP() {
+    private void loseHP()
+    {
         hp--;
-        if (hp == 2) {
+        if (hp == 2)
+        {
             hp3.enabled = false;
         }
-        else if (hp == 1) {
+        else if (hp == 1)
+        {
             hp2.enabled = false;
         }
-        else if(hp == 0) {
+        else if (hp == 0)
+        {
             hp1.enabled = false;
             lives--;
+            gm.spawnPlayer();
             lifeTxt.text = "x " + lives;
             // Player lost a life, reset his hp
-            if(lives > 0)
+            if (lives > 0)
+            {
+                StopAllCoroutines();
                 resetHP();
+            }
         }
     }
 
-    private void gainHP() {
-        if(hp < 3) {
+    private void gainHP()
+    {
+        if (hp < 3)
+        {
             hp++;
-            if (hp == 3) {
+            if (hp == 3)
+            {
                 hp3.enabled = true;
             }
-            else if (hp == 2) {
+            else if (hp == 2)
+            {
                 hp2.enabled = true;
             }
         }
     }
 
-    private void resetHP() {
+    private void resetHP()
+    {
         hp = maxHP;
         hp1.enabled = true;
         hp2.enabled = true;
         hp3.enabled = true;
-        gm.spawnPlayer();
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag.Equals("Water"))
+        if (collider.tag == "Water")
         {
             loseHP();
-            if(lives > 0)
+            if (lives > 0)
                 gm.spawnPlayer();
             else
                 GameOver();
@@ -108,7 +125,7 @@ public class PlayerStatus : MonoBehaviour
     IEnumerator spriteInvincible()
     {
         invincible = true;
-        
+
         while (iterInvincibility < 3)
         {
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
