@@ -29,7 +29,7 @@ public class PlayerStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        lifeTxt.text = "x " + lives;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -108,7 +108,7 @@ public class PlayerStatus : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag == "Water")
+        if (collider.tag.Equals("Water"))
         {
             lives--;
             if (lives > 0)
