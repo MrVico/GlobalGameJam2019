@@ -14,7 +14,7 @@ public class PlayerStatus : MonoBehaviour
     [SerializeField] Image hp3;
     [SerializeField] Text lifeTxt;
 
-    private int lives;
+    public int lives;
     private int hp;
     private int iterInvincibility = 0;
 
@@ -32,6 +32,10 @@ public class PlayerStatus : MonoBehaviour
     void Update()
     {
         lifeTxt.text = "x " + lives;
+        if(lives == 0)
+        {
+            GameOver();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -48,6 +52,11 @@ public class PlayerStatus : MonoBehaviour
 
         }
         if (collision.collider.name == "Secret")
+        {
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.collider.tag.Equals("Stairs"))
         {
             Destroy(collision.gameObject);
         }
@@ -110,7 +119,7 @@ public class PlayerStatus : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag.Equals("Water"))
+        if (collider.tag.Equals("Water") || collider.tag.Equals("Sand"))
         {
             lives--;
             if (lives > 0)
