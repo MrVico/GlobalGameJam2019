@@ -89,10 +89,14 @@ public class PlayerControls : MonoBehaviour {
         float move = Input.GetAxis("Horizontal");
 
         // We are moving
-        if(Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) {
+            animator.ResetTrigger("Idle");
             animator.SetTrigger("Move");
-        else
+        }
+        else {
+            animator.ResetTrigger("Move");
             animator.SetTrigger("Idle");
+        }
         
         GetComponent<Rigidbody2D>().velocity = new Vector2(move * moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
