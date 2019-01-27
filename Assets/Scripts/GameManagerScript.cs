@@ -44,4 +44,5 @@ public class GameManagerScript : MonoBehaviour
         loseScreen.SetActive(false);
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
 }
