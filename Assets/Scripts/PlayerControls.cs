@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class PlayerControls : MonoBehaviour {
 
@@ -126,15 +127,16 @@ public class PlayerControls : MonoBehaviour {
             framesSinceWallTouch = 15;
         }
 
-        printLineShooting();
-        if (GetComponent<PlayerStatus>().bananaMode && framesSinceLastShoot > nbFrameBetweenShots)//&& Input.GetButtonDown("Fire1")
-        {
-            
-            if (Input.GetButtonDown("Fire1"))
+        if (!SceneManager.GetActiveScene().name.Equals("Menu")) {
+            printLineShooting();
+            if (GetComponent<PlayerStatus>().bananaMode && framesSinceLastShoot > nbFrameBetweenShots)//&& Input.GetButtonDown("Fire1")
             {
-                BananaShoot();
+
+                if (Input.GetButtonDown("Fire1")) {
+                    BananaShoot();
+                }
+                //BananaShoot();
             }
-            //BananaShoot();
         }
     }
 

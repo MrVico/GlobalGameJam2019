@@ -22,7 +22,7 @@ public class IntroScene : MonoBehaviour
     {
         if (moveMother) {
             mother.transform.Translate(Time.deltaTime * 3f, 0f, 0f);
-            if(mother.transform.position.x > 14f) {
+            if(mother.transform.position.x > 18f) {
                 moveMother = false;
                 Destroy(mother);
                 StartCoroutine(waitOutIntro());
@@ -31,14 +31,13 @@ public class IntroScene : MonoBehaviour
     }
 
     IEnumerator waitOutIntro() {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         key.SetActive(true);
         // The player can now move
         player.GetComponent<PlayerControls>().enabled = true;
     }
 
     private void OnMouseDown() {
-        Debug.Log("Starting intro");
         Destroy(GetComponent<BoxCollider2D>());
         moveMother = true;
         mother.GetComponent<Animator>().SetTrigger("Walk");
