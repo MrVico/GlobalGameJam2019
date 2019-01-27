@@ -8,6 +8,8 @@ public class FinishScript : MonoBehaviour
     public bool collideWithPlayer;
     public GameObject player;
 
+    [SerializeField] GameObject fadeQuad;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +23,9 @@ public class FinishScript : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.collider.tag == "Player")
+        if (collider.tag == "Player")
         {
             goToNextScene();
         }
@@ -37,6 +39,18 @@ public class FinishScript : MonoBehaviour
 
     public void goToNextScene()
     {
+        StartCoroutine(fadeOut());
+    }
+
+    IEnumerator fadeOut() {
+        Color fadeColor = fadeQuad.GetComponent<MeshRenderer>().material.color;
+        fadeColor.a = 0;
+        fadeQuad.GetComponent<MeshRenderer>().material.color = fadeColor;
+        while (fadeColor.a < 1) {
+            fadeColor.a += Time.deltaTime;
+            fadeQuad.GetComponent<MeshRenderer>().material.color = fadeColor;
+            yield return null;
+        }
         SceneManager.LoadScene("Niveau1");
     }
 }
