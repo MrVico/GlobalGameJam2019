@@ -98,7 +98,6 @@ public class GameManagerScript : MonoBehaviour
         }
         */
     }
-<<<<<<< HEAD
 
     IEnumerator FadeToScene(GameManagerScript.Scene scene)
     {
@@ -136,7 +135,4 @@ public class GameManagerScript : MonoBehaviour
         }
         
     }
-
-=======
->>>>>>> bffdc8e7af780365f7c6d1a76c960c8887ad8929
 }
