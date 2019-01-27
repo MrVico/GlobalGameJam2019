@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinishScript : MonoBehaviour
 {
@@ -24,13 +25,18 @@ public class FinishScript : MonoBehaviour
     {
         if (collision.collider.tag == "Player")
         {
-            inverseCollision();
+            goToNextScene();
         }
-        Debug.Log(collision.collider.tag);
+        //Debug.Log(collision.collider.tag);
     }
 
     public void inverseCollision()
     {
         collideWithPlayer = !collideWithPlayer;
+    }
+
+    public void goToNextScene()
+    {
+        SceneManager.LoadScene("GGJ2019 - Copie");
     }
 }
