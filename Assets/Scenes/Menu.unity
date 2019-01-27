@@ -1167,7 +1167,7 @@ GameObject:
   - component: {fileID: 768896024}
   - component: {fileID: 768896025}
   m_Layer: 0
-  m_Name: restart
+  m_Name: start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
