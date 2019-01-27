@@ -20,11 +20,7 @@ public class DetectorTuyau : MonoBehaviour
     {
         if(collision.tag == "MovableElement")
         {
-            Animator animColli = collision.GetComponent<Animator>();
-            if (animColli != null)
-            {
-                animColli.SetBool("TriggerAllInTuyau", true);
-            }
+            Destroy(collision.gameObject);
         }
     }
 }

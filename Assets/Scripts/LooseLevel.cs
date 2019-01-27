@@ -23,6 +23,7 @@ public class LooseLevel : MonoBehaviour
     {
         if (collision.collider.tag == "Player")
         {
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>().desactivateMusicScene();
             loseScreen.SetActive(true);
 
         }
