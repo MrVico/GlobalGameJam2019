@@ -26,4 +26,12 @@ public class Door : MonoBehaviour
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
     }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+           // collision.GetComponent<>
+        }
+    }
 }

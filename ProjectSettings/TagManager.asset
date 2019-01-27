@@ -19,6 +19,7 @@ TagManager:
   - Mother
   - Bullet
   - MouvableElement
+  - GameManager
   layers:
   - Default
   - TransparentFX
