@@ -130,20 +130,18 @@ public class PlayerControls : MonoBehaviour {
             WallJump();
             framesSinceWallTouch = 15;
         }
-
-        if (!SceneManager.GetActiveScene().name.Equals("Menu")) {
-            if (GetComponent<PlayerStatus>().bananaMode)
+        
+        if (GetComponent<PlayerStatus>().bananaMode)
+        {
+            printLineShooting();
+            if (framesSinceLastShoot > nbFrameBetweenShots)//&& Input.GetButtonDown("Fire1")
             {
-                printLineShooting();
-                if (framesSinceLastShoot > nbFrameBetweenShots)//&& Input.GetButtonDown("Fire1")
-                {
 
-                    if (Input.GetButtonDown("Fire1"))
-                    {
-                        BananaShoot();
-                    }
-                    //BananaShoot();
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    BananaShoot();
                 }
+                //BananaShoot();
             }
         }
     }
