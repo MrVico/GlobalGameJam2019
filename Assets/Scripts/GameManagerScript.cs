@@ -29,6 +29,7 @@ public class GameManagerScript : MonoBehaviour
         startPosition = GameObject.FindGameObjectWithTag("StartPosition");
         finishPosition = GameObject.FindGameObjectWithTag("FinishPosition");
         player.position = startPosition.transform.position;
+        if(SceneManager.GetActiveScene().name == "Niveau1") StartCoroutine(FadeToScene(Scene.HELL));
     }
 
 
@@ -42,7 +43,7 @@ public class GameManagerScript : MonoBehaviour
             spawnPlayer();
             finishPosition.GetComponent<FinishScript>().inverseCollision();
         }
-
+        /*
         a+=Time.deltaTime;
         if (a > 5.0f)
         {
@@ -52,7 +53,7 @@ public class GameManagerScript : MonoBehaviour
                 StartCoroutine(FadeToScene(Scene.NORMAL));
             else
                 StartCoroutine(FadeToScene(Scene.HELL));
-        }
+        }*/
 
     }
 
@@ -98,7 +99,6 @@ public class GameManagerScript : MonoBehaviour
         }
         */
     }
-<<<<<<< HEAD
 
     IEnumerator FadeToScene(GameManagerScript.Scene scene)
     {
@@ -137,6 +137,5 @@ public class GameManagerScript : MonoBehaviour
         
     }
 
-=======
->>>>>>> bffdc8e7af780365f7c6d1a76c960c8887ad8929
+
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DetectorTuyau : MonoBehaviour
 {
+    public Sprite goodTube;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,7 @@ public class DetectorTuyau : MonoBehaviour
     {
         if(collision.tag == "MovableElement")
         {
+            GetComponent<SpriteRenderer>().sprite = goodTube;
             Destroy(collision.gameObject);
         }
     }
