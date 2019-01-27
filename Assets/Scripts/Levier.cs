@@ -21,9 +21,10 @@ public class Levier : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && !activated)
         {
             activated = true;
+            transform.eulerAngles = transform.rotation.eulerAngles + new Vector3(0,0,90);
             GetComponent<SpriteRenderer>().color = Color.blue;
         }
     }

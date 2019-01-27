@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FinishScript : MonoBehaviour
+public class LooseLevel : MonoBehaviour
 {
-    public bool collideWithPlayer;
-    public GameObject player;
+    [SerializeField] GameObject loseScreen;
 
     // Start is called before the first frame update
     void Start()
     {
-        collideWithPlayer = false;
-        player = GameObject.FindGameObjectWithTag("Player");
+        
     }
 
     // Update is called once per frame
@@ -25,18 +23,9 @@ public class FinishScript : MonoBehaviour
     {
         if (collision.collider.tag == "Player")
         {
-            goToNextScene();
+            loseScreen.SetActive(true);
+
         }
         //Debug.Log(collision.collider.tag);
-    }
-
-    public void inverseCollision()
-    {
-        collideWithPlayer = !collideWithPlayer;
-    }
-
-    public void goToNextScene()
-    {
-        SceneManager.LoadScene("Niveau1");
     }
 }

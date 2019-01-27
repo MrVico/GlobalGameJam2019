@@ -17,6 +17,8 @@ TagManager:
   - Secret
   - Key
   - Mother
+  - Bullet
+  - MouvableElement
   layers:
   - Default
   - TransparentFX
@@ -30,9 +32,9 @@ TagManager:
   - Obstacle
   - Ground
   - Wall
-  - 
-  - 
-  - 
+  - Bullet
+  - Tuyau
+  - MovableElement
   - 
   - 
   - 

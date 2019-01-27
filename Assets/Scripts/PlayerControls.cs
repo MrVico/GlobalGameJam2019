@@ -128,14 +128,18 @@ public class PlayerControls : MonoBehaviour {
         }
 
         if (!SceneManager.GetActiveScene().name.Equals("Menu")) {
-            printLineShooting();
-            if (GetComponent<PlayerStatus>().bananaMode && framesSinceLastShoot > nbFrameBetweenShots)//&& Input.GetButtonDown("Fire1")
+            if (GetComponent<PlayerStatus>().bananaMode)
             {
+                printLineShooting();
+                if (framesSinceLastShoot > nbFrameBetweenShots)//&& Input.GetButtonDown("Fire1")
+                {
 
-                if (Input.GetButtonDown("Fire1")) {
-                    BananaShoot();
+                    if (Input.GetButtonDown("Fire1"))
+                    {
+                        BananaShoot();
+                    }
+                    //BananaShoot();
                 }
-                //BananaShoot();
             }
         }
     }

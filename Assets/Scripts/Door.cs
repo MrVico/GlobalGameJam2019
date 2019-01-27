@@ -24,5 +24,6 @@ public class Door : MonoBehaviour
     public void ActivateDoor()
     {
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
     }
 }

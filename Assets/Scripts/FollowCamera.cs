@@ -6,11 +6,11 @@ using System.Collections;
 public class FollowCamera : MonoBehaviour
 {
     public Transform target;
-    public float dampTime = 0.15f;
+    //public float dampTime = 0.15f;
 
     private Vector3 velocity = Vector3.zero;
     private Vector3 verticalOffset = new Vector3(0f, 1.5f, 0f);
-    /*
+    
     public float smoothTime = 0.3F;
     public float posY;
     public float minX;
@@ -28,7 +28,7 @@ public class FollowCamera : MonoBehaviour
         Vector3 desiredPosition = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
         transform.position = new Vector3(Mathf.Clamp(desiredPosition.x, minX, maxX), Mathf.Clamp(desiredPosition.y, minY, maxY), desiredPosition.z);
     }
-    */
+    /*
 
     // Update is called once per frame
     void Update() {
@@ -39,5 +39,5 @@ public class FollowCamera : MonoBehaviour
             transform.position = Vector3.SmoothDamp(transform.position, destination, ref velocity, dampTime);
         }
 
-    }
+    }*/
 }
