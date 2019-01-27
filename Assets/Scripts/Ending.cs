@@ -9,6 +9,7 @@ public class Ending : MonoBehaviour
     [SerializeField] GameObject door;
 
     private bool motherWaits = false;
+    private bool end = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +24,10 @@ public class Ending : MonoBehaviour
             player.transform.Translate(-Time.deltaTime * 3f, 0f, 0f);
             player.GetComponent<Animator>().SetTrigger("Move");
         }
-        else {
+        else if(!end) {
+            end = true;
             player.GetComponent<Animator>().SetTrigger("Happy Idle");
+            StartCoroutine(showCanvas());
         }
 
         if (!motherWaits && mother.transform.position.x > -3.5f) {
@@ -40,6 +43,16 @@ public class Ending : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider) {
         if (collider.gameObject == door) {
             StartCoroutine(openAndWait());
+        }
+    }
+
+    IEnumerator showCanvas() {
+        Camera.main.transform.Find("Canvas").gameObject.SetActive(true);
+        CanvasGroup cg = Camera.main.transform.Find("Canvas").GetComponent<CanvasGroup>();
+        cg.alpha = 0;
+        while(cg.alpha < 1) {
+            cg.alpha += Time.deltaTime / 2f;
+            yield return null;
         }
     }
 

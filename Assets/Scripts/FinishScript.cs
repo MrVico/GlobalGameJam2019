@@ -37,6 +37,6 @@ public class FinishScript : MonoBehaviour
 
     public void goToNextScene()
     {
-        SceneManager.LoadScene("GGJ2019 - Copie");
+        SceneManager.LoadScene("Niveau1");
     }
 }

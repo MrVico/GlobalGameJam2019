@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraMovement : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class CameraMovement : MonoBehaviour
 
     private Vector3 velocity = Vector3.zero;
 
+    private void Start()
+    {
+
+        //AkSoundEngine.PostEvent("Play_MusicIntroHouse", gameObject);
+    }
 
     void Update()
     {
@@ -24,5 +30,13 @@ public class CameraMovement : MonoBehaviour
         Vector3 desiredPosition = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
         transform.position = new Vector3(Mathf.Clamp(desiredPosition.x, minX, maxX), Mathf.Clamp(desiredPosition.y, minY, maxY), desiredPosition.z);
     }
-    
+
+    private void OnDestroy()
+    {
+        if (SceneManager.GetActiveScene().Equals("Menu"))
+        {
+            //AkSoundEngine.PostEvent("Stop_MusicIntroHouse", this.gameObject);
+        }
+    }
+
 }

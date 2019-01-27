@@ -5,10 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 94850b6868948d44ba909231fcdec850
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GGJ2019 - Copie.unity
     guid: 64f721ccf98c8884d93f0aa78887682f
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 4d2756f03f395a443a43df3c158225f9
+  - enabled: 1
+    path: Assets/Scenes/Niveau1.unity
+    guid: 1ed2faf45ecd7c749922ad806e9e8fe7
+  - enabled: 1
+    path: Assets/Scenes/Lvl2.unity
+    guid: cba0aedc25b46494da6a207117080903
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: dc040007e68f7bf4bbf9016117052c72
   m_configObjects: {}

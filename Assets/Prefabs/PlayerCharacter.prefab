@@ -210,9 +210,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.27999994, y: -1.6316723}
+  m_Offset: {x: -0.24569012, y: -1.4825512}
   serializedVersion: 2
-  m_Radius: 0.72687435
+  m_Radius: 0.9784831
 --- !u!111 &6517142403172780734
 Animation:
   m_ObjectHideFlags: 0
@@ -225,7 +225,7 @@ Animation:
   m_Animation: {fileID: 0}
   m_Animations:
   - {fileID: 0}
-  - {fileID: 7400000, guid: 1d18d237f5c7cc64198e6a6c8263e659, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -245,11 +245,12 @@ MonoBehaviour:
   gm: {fileID: 0}
   maxHP: 3
   invincible: 0
-  bananaMode: 1
+  bananaMode: 0
   hp1: {fileID: 0}
   hp2: {fileID: 0}
   hp3: {fileID: 0}
   lifeTxt: {fileID: 0}
+  hasKey: 0
 --- !u!114 &2008642508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,8 +266,8 @@ MonoBehaviour:
   moveSpeed: 7
   nbFrameBetweenShots: 20
   bulletSpawn: {fileID: 494882408}
-  bullet: {fileID: 0}
-  speedBullet: 0
+  bullet: {fileID: 2457653511273048674, guid: 65e8b5af4b2cb354299b0a93cb32865e, type: 3}
+  speedBullet: 1
   nbPointsCourbeShoot: 20
   lineRenderer: {fileID: 0}
   groundCheck: {fileID: 6804232605354657772}
