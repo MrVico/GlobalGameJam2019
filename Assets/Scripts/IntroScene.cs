@@ -21,7 +21,13 @@ public class IntroScene : MonoBehaviour
     void Update()
     {
         if (moveMother) {
+            if(mother.transform.localScale.x < 0) {
+                Vector3 motherScale = mother.transform.localScale;
+                motherScale.x *= -1;
+                mother.transform.localScale = motherScale;
+            }
             mother.transform.Translate(Time.deltaTime * 3f, 0f, 0f);
+            mother.GetComponent<Animator>().SetTrigger("Move");
             if(mother.transform.position.x > 18f) {
                 moveMother = false;
                 Destroy(mother);

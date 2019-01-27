@@ -38,3 +38,6 @@ sysinfo.txt
 # Wwise
 /pathToWwiseProject/Originals/SFX/*.akd
 /pathToWwiseProject/.cache/
+
+# PNG
+*png.meta

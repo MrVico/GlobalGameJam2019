@@ -18,7 +18,7 @@ public class CameraMovement : MonoBehaviour
     private void Start()
     {
 
-        AkSoundEngine.PostEvent("Play_MusicIntroHouse", gameObject);
+        //AkSoundEngine.PostEvent("Play_MusicIntroHouse", gameObject);
     }
 
     void Update()
@@ -35,7 +35,7 @@ public class CameraMovement : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().Equals("Menu"))
         {
-            AkSoundEngine.PostEvent("Stop_MusicIntroHouse", this.gameObject);
+            //AkSoundEngine.PostEvent("Stop_MusicIntroHouse", this.gameObject);
         }
     }
 
