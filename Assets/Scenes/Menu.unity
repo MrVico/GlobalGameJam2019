@@ -705,6 +705,11 @@ PrefabInstance:
       propertyPath: fadeQuad
       value: 
       objectReference: {fileID: 1271556138}
+    - target: {fileID: 8735572735314475272, guid: 47754ffb3017b334a86846c93ab5af71,
+        type: 3}
+      propertyPath: nextSceneName
+      value: Niveau1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47754ffb3017b334a86846c93ab5af71, type: 3}
 --- !u!1 &541594423
