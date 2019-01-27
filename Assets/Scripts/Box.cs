@@ -28,8 +28,7 @@ public class Box : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {
-        // If the box is in movement/falling and didn't already hit the player (who has two colliders)
-        if (rigidbody.velocity != Vector2.zero && !hitOnPlayer && collider.tag.Equals("Player")) {
+        if (transform.position.y > player.transform.position.y && !hitOnPlayer && collider.tag.Equals("Player")) {
             hitOnPlayer = true;
             player.SendMessage("loseHP");
             if (player.GetComponent<PlayerStatus>().getHP() <= 0)
