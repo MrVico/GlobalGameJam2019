@@ -7,6 +7,7 @@ public class Ending : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] GameObject mother;
     [SerializeField] GameObject door;
+    [SerializeField] GameObject fadeQuad;
 
     private bool motherWaits = false;
     private bool end = false;
@@ -14,7 +15,7 @@ public class Ending : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        StartCoroutine(fadeIn());
     }
 
     // Update is called once per frame
@@ -63,5 +64,16 @@ public class Ending : MonoBehaviour
         motherWaits = false;
         yield return new WaitForSeconds(0.5f);
         door.GetComponent<Animator>().SetTrigger("Close");
+    }
+
+    IEnumerator fadeIn() {
+        Color fadeColor = fadeQuad.GetComponent<MeshRenderer>().material.color;
+        fadeColor.a = 1;
+        fadeQuad.GetComponent<MeshRenderer>().material.color = fadeColor;
+        while (fadeColor.a > 0) {
+            fadeColor.a -= Time.deltaTime;
+            fadeQuad.GetComponent<MeshRenderer>().material.color = fadeColor;
+            yield return null;
+        }
     }
 }

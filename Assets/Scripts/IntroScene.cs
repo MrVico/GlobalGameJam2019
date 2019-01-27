@@ -7,6 +7,7 @@ public class IntroScene : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] GameObject mother;
     [SerializeField] GameObject key;
+    [SerializeField] GameObject fadeQuad;
 
     private bool moveMother = false;
 
@@ -15,6 +16,8 @@ public class IntroScene : MonoBehaviour
     {
         // Prevent the player from moving
         player.GetComponent<PlayerControls>().enabled = false;
+
+        StartCoroutine(fadeIn());
     }
 
     // Update is called once per frame
@@ -49,5 +52,14 @@ public class IntroScene : MonoBehaviour
         mother.GetComponent<Animator>().SetTrigger("Walk");
     }
 
-    
+    IEnumerator fadeIn() {
+        Color fadeColor = fadeQuad.GetComponent<MeshRenderer>().material.color;
+        fadeColor.a = 1;
+        fadeQuad.GetComponent<MeshRenderer>().material.color = fadeColor;
+        while (fadeColor.a > 0) {
+            fadeColor.a -= Time.deltaTime;
+            fadeQuad.GetComponent<MeshRenderer>().material.color = fadeColor;
+            yield return null;
+        }
+    }
 }
