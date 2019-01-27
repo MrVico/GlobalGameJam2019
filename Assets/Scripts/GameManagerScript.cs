@@ -71,9 +71,9 @@ public class GameManagerScript : MonoBehaviour
         loseScreen.SetActive(false);
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
     public void activateMusicScene()
     {
+        /*
         switch (SceneManager.GetActiveScene().name)
         {
             case "Menu": AkSoundEngine.PostEvent("Play_MusicIntroHouse", gameObject); break;
@@ -82,10 +82,12 @@ public class GameManagerScript : MonoBehaviour
             //case "Desk": AkSoundEngine.PostEvent("Play_MusicIntroHouse", gameObject); break;
             case "Ending": AkSoundEngine.PostEvent("Play_MusicIntroHouse", gameObject); break;
         }
+        */
     }
 
     public void desactivateMusicScene()
     {
+        /*
         switch (SceneManager.GetActiveScene().name)
         {
             case "Menu": AkSoundEngine.PostEvent("Stop_MusicIntroHouse", gameObject); break;
@@ -94,7 +96,9 @@ public class GameManagerScript : MonoBehaviour
             //case "Desk": AkSoundEngine.PostEvent("Stop_MusicIntroHouse", gameObject); break;
             case "Ending": AkSoundEngine.PostEvent("Stop_MusicIntroHouse", gameObject); break;
         }
+        */
     }
+<<<<<<< HEAD
 
     IEnumerator FadeToScene(GameManagerScript.Scene scene)
     {
@@ -133,4 +137,6 @@ public class GameManagerScript : MonoBehaviour
         
     }
 
+=======
+>>>>>>> bffdc8e7af780365f7c6d1a76c960c8887ad8929
 }

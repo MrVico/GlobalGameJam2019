@@ -12,18 +12,19 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         u += speed * Time.deltaTime;
+        
         if (u >= 1)
         {
             Destroy(this.gameObject);
         }
-        if (controlesPoints != null)
+        if (u < 1 && controlesPoints != null)
         {
             Vector3 newPos = calcPointsCasteljaux(controlesPoints, controlesPoints.Length, u);
             transform.position = newPos;
@@ -56,5 +57,17 @@ public class Bullet : MonoBehaviour
 
         return calcPointsCasteljaux(tempList, ptsControlesCount - 1, u);
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider) {
+        if (collider.tag.Equals("Bird")) {
+            collider.gameObject.SendMessage("Hit");
+            Destroy(gameObject);
+        }
+        else if (collider.tag.Equals("Box")) {
+            collider.transform.parent.gameObject.SendMessage("FlyAway");
+            Destroy(collider.gameObject);
+            Destroy(gameObject);
+        }
     }
 }
