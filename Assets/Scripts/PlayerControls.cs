@@ -49,11 +49,11 @@ public class PlayerControls : MonoBehaviour {
 
         // TESTS
         if (Input.GetKeyDown(KeyCode.A)) {
-            GameObject.Find("HouseDoor").GetComponent<Animator>().SetTrigger("Open");
+            GameObject.Find("Tree").GetComponent<Animator>().SetTrigger("On");
             //GameObject.Find("GardenDoor").GetComponent<Animator>().ResetTrigger("Close");
         }
         else if (Input.GetKeyDown(KeyCode.E)) {
-            GameObject.Find("HouseDoor").GetComponent<Animator>().SetTrigger("Close");
+            GameObject.Find("Tree").GetComponent<Animator>().SetTrigger("Off");
             //GameObject.Find("GardenDoor").GetComponent<Animator>().ResetTrigger("Open");
         }
 
