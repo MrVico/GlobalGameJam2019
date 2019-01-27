@@ -16,6 +16,7 @@ public class TreeManager : MonoBehaviour
     {
         if (!isActivated)
         {
+            gameObject.GetComponent<Animator>().ResetTrigger("On");
             gameObject.GetComponent<Animator>().SetTrigger("Off");
         }
         else
