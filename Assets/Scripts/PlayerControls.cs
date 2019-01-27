@@ -49,7 +49,7 @@ public class PlayerControls : MonoBehaviour {
 
         // TESTS
         if (Input.GetKeyDown(KeyCode.A)) {
-            GameObject.Find("Tree").GetComponent<Animator>().SetTrigger("On");
+            GameObject.Find("Dog").GetComponent<Animator>().SetTrigger("Bone");
             //GameObject.Find("GardenDoor").GetComponent<Animator>().ResetTrigger("Close");
         }
         else if (Input.GetKeyDown(KeyCode.E)) {
