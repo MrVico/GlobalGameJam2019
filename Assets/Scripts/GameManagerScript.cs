@@ -11,6 +11,17 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] GameObject loseScreen;
 
+    enum Scene
+    {
+        NORMAL,
+        HELL
+    };
+
+    public AnimationCurve FadeAnimationCurve;
+    public float FadeDuration;
+    public SpriteRenderer NormalScene;
+    public SpriteRenderer HellScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +31,9 @@ public class GameManagerScript : MonoBehaviour
         player.position = startPosition.transform.position;
     }
 
+
+    float a = 0.0f;
+    bool b = true;
     // Update is called once per frame
     void Update()
     {
@@ -27,7 +41,19 @@ public class GameManagerScript : MonoBehaviour
         {
             spawnPlayer();
             finishPosition.GetComponent<FinishScript>().inverseCollision();
-        }        
+        }
+
+        a+=Time.deltaTime;
+        if (a > 5.0f)
+        {
+            a = 0.0f;
+            b = !b;
+            if (b)
+                StartCoroutine(FadeToScene(Scene.NORMAL));
+            else
+                StartCoroutine(FadeToScene(Scene.HELL));
+        }
+
     }
 
     public void spawnPlayer()
@@ -68,6 +94,43 @@ public class GameManagerScript : MonoBehaviour
             //case "Desk": AkSoundEngine.PostEvent("Stop_MusicIntroHouse", gameObject); break;
             case "Ending": AkSoundEngine.PostEvent("Stop_MusicIntroHouse", gameObject); break;
         }
+    }
+
+    IEnumerator FadeToScene(GameManagerScript.Scene scene)
+    {
+        Debug.Log("FadeToScene: " + scene.ToString());
+        yield return null;
+        float u = 1.0f;
+        if (scene == Scene.HELL)
+        {
+            HellScene.sortingOrder = 0;
+            HellScene.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+            NormalScene.sortingOrder = 20;
+            NormalScene.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+
+            while (u > 0.0f)
+            {
+                u = Mathf.Clamp(u - Time.deltaTime * (1.0f / FadeDuration), 0.0f, 1.0f);
+                float alphaValue = FadeAnimationCurve.Evaluate(u);
+                NormalScene.color = new Color(1.0f, 1.0f, 1.0f, alphaValue);
+                yield return new WaitForEndOfFrame();
+            }
+        }
+        else if (scene == Scene.NORMAL)
+        {
+            NormalScene.sortingOrder = 20;
+            NormalScene.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+            HellScene.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+            HellScene.sortingOrder = 21;
+            while (u > 0.0f)
+            {
+                u = Mathf.Clamp(u - Time.deltaTime * (1.0f / FadeDuration), 0.0f, 1.0f);
+                float alphaValue = FadeAnimationCurve.Evaluate(u);
+                HellScene.color = new Color(1.0f, 1.0f, 1.0f, alphaValue);
+                yield return new WaitForEndOfFrame();
+            }
+        }
+        
     }
 
 }
