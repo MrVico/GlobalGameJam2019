@@ -1,0 +1,47 @@
+Adobe After Effects v14.0.1 Windows 64 - Compte rendu du projet partie2anim.aep
+
+Début du rendu le 27/01/2019 à 03:53:35
+
+  27/01/2019 03:53:35 : début de la composition chien_grrr.
+
+  Destin. : D:\Bureau\BTS DG 02\PRICECOMPARATOR STAGE\roto exports\poing\chien_grrr\chien_grrr_[#####].png    27/01/2019 03:53:38 : fin de la composition chien_grrr.
+
+
+  27/01/2019 03:53:38 : début de la composition chien_idle 3.
+
+  Destin. : D:\Bureau\BTS DG 02\PRICECOMPARATOR STAGE\roto exports\poing\chien_idle 3\chien_idle 3_[#####].png    27/01/2019 03:53:41 : fin de la composition chien_idle 3.
+
+
+  27/01/2019 03:53:41 : début de la composition chien_os.
+
+  Destin. : D:\Bureau\BTS DG 02\PRICECOMPARATOR STAGE\roto exports\poing\chien_os\chien_os_[#####].png    27/01/2019 03:53:45 : fin de la composition chien_os.
+
+
+  27/01/2019 03:53:45 : début de la composition levier.
+
+  Destin. : D:\Bureau\BTS DG 02\PRICECOMPARATOR STAGE\roto exports\poing\levier\levier_[#####].png    27/01/2019 03:53:48 : fin de la composition levier.
+
+
+  27/01/2019 03:53:48 : début de la composition croco.
+
+  Destin. : D:\Bureau\BTS DG 02\PRICECOMPARATOR STAGE\roto exports\poing\croco\croco_[#####].png    27/01/2019 03:53:51 : fin de la composition croco.
+
+
+  27/01/2019 03:53:51 : début de la composition sable.
+
+  Destin. : D:\Bureau\BTS DG 02\PRICECOMPARATOR STAGE\roto exports\poing\sable\sable_[#####].png    27/01/2019 03:53:55 : fin de la composition sable.
+
+
+  27/01/2019 03:53:55 : début de la composition voiture.
+
+  Destin. : D:\Bureau\BTS DG 02\PRICECOMPARATOR STAGE\roto exports\poing\voiture\voiture_[#####].png    27/01/2019 03:53:58 : fin de la composition voiture.
+
+
+  27/01/2019 03:53:58 : début de la composition voiture2.
+
+  Destin. : D:\Bureau\BTS DG 02\PRICECOMPARATOR STAGE\roto exports\poing\voiture2\voiture2_[#####].png    27/01/2019 03:54:02 : fin de la composition voiture2.
+
+
+  Temps total écoulé : 27 Secondes
+Compte-rendu terminé le 27/01/2019 à 03:54:02
+

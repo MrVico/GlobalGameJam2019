@@ -22,7 +22,7 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(finishPosition.GetComponent<FinishScript>().collideWithPlayer)
+        if(finishPosition != null && finishPosition.GetComponent<FinishScript>().collideWithPlayer)
         {
             spawnPlayer();
             finishPosition.GetComponent<FinishScript>().inverseCollision();

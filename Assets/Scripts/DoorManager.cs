@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DoorManager : MonoBehaviour
 {
@@ -46,7 +47,7 @@ public class DoorManager : MonoBehaviour
     }
     */
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.tag.Equals("Mother")) {
+        if (collision.gameObject.tag.Equals("Mother") && SceneManager.GetActiveScene().name.Equals("Menu")) {
             animator.SetTrigger("Open");
             animator.SetTrigger("Close");
         }
