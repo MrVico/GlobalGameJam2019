@@ -1,0 +1,12 @@
+Adobe After Effects v14.0.1 Windows 64 - Compte rendu du projet Projet sans titre copie .aep
+
+Début du rendu le 27/01/2019 à 04:43:53
+
+  27/01/2019 04:43:53 : début de la composition child_yeux.
+
+  Destin. : D:\Documents\GitHub\GlobalGameJam2019\Assets\graphics\ANIM\child_yeux\child_yeux_[#####].png    27/01/2019 04:43:56 : fin de la composition child_yeux.
+
+
+  Temps total écoulé : 3 Secondes
+Compte-rendu terminé le 27/01/2019 à 04:43:56
+

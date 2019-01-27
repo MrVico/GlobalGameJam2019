@@ -1,0 +1,12 @@
+Adobe After Effects v14.0.1 Windows 64 - Compte rendu du projet Projet sans titre copie .aep
+
+Début du rendu le 27/01/2019 à 04:21:46
+
+  27/01/2019 04:21:46 : début de la composition child_marche.
+
+  Destin. : D:\Documents\GitHub\GlobalGameJam2019\Assets\graphics\ANIM\child_marche\child_marche_[#####].png    27/01/2019 04:21:49 : fin de la composition child_marche.
+
+
+  Temps total écoulé : 3 Secondes
+Compte-rendu terminé le 27/01/2019 à 04:21:49
+
