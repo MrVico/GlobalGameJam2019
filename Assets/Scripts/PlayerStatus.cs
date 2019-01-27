@@ -122,7 +122,6 @@ public class PlayerStatus : MonoBehaviour
         if (collider.tag.Equals("Key"))
         {
             Destroy(collider.gameObject);
-            GameObject.Find("Door").GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 

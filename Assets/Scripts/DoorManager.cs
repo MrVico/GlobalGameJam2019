@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class DoorManager : MonoBehaviour
 {
-
     public GameObject player;
+
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -21,10 +22,25 @@ public class DoorManager : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (player.GetComponent<PlayerStatus>().hasKey)
+        if (collision.gameObject.tag.Equals("Player") && player.GetComponent<PlayerStatus>().hasKey)
         {
-            gameObject.GetComponent<Animator>().SetTrigger("Open");
+            animator.SetTrigger("Open");
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            //StartCoroutine(openInABit());
+        }
+    }
+    
+    // Doesn't work 'cause it also delays the OPEN animation for some reason
+    /*
+    IEnumerator openInABit() {
+        yield return new WaitForSeconds(0.5f);
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+    }
+    */
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.tag.Equals("Mother")) {
+            animator.SetTrigger("Open");
+            animator.SetTrigger("Close");
         }
     }
 }
