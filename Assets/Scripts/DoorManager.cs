@@ -8,6 +8,9 @@ public class DoorManager : MonoBehaviour
 
     private Animator animator;
 
+    private float timer = 0f;
+    private bool doorOpening = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +20,11 @@ public class DoorManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (doorOpening) {
+            timer += Time.deltaTime;
+            if(timer > 1f)
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -25,7 +32,8 @@ public class DoorManager : MonoBehaviour
         if (collision.gameObject.tag.Equals("Player") && player.GetComponent<PlayerStatus>().hasKey)
         {
             animator.SetTrigger("Open");
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            doorOpening = true;
+            //gameObject.GetComponent<BoxCollider2D>().enabled = false;
             //StartCoroutine(openInABit());
         }
     }
