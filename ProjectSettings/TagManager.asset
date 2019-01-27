@@ -21,6 +21,11 @@ TagManager:
   - MouvableElement
   - GameManager
   - Bird
+  - Undefined
+  - Dog
+  - Sand
+  - Balloon
+  - Stairs
   layers:
   - Default
   - TransparentFX

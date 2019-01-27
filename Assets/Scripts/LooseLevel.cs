@@ -19,9 +19,9 @@ public class LooseLevel : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.collider.tag == "Player")
+        if (collider.tag == "Player")
         {
             GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>().desactivateMusicScene();
             loseScreen.SetActive(true);
