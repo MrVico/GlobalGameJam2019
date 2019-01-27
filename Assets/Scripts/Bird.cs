@@ -18,7 +18,12 @@ public class Bird : MonoBehaviour
     {
         transform.Translate(new Vector2(Time.deltaTime, Time.deltaTime*heightModifier));
         
-        if(thing != null && Input.GetKeyDown(KeyCode.A)){
+        if (transform.position.y > 5f)
+            Destroy(gameObject);
+    }
+
+    private void Hit() {
+        if(thing != null) {
             // Add the script containing the rigidbody
             thing.AddComponent<Box>();
             thing.transform.parent = null;
@@ -26,8 +31,10 @@ public class Bird : MonoBehaviour
             // The bird flies away
             heightModifier = 1f;
         }
+    }
 
-        if (transform.position.y > 5f)
-            Destroy(gameObject);
+    // Called when the thing/box is destroyed by a bullet
+    private void FlyAway() {
+        heightModifier = 1f;
     }
 }

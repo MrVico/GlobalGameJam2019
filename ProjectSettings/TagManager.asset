@@ -19,6 +19,7 @@ TagManager:
   - Mother
   - Bullet
   - MouvableElement
+  - Bird
   layers:
   - Default
   - TransparentFX
