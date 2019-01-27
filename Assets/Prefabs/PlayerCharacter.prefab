@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 6517142403172780734}
   - component: {fileID: 6076417068838574762}
   - component: {fileID: 2008642508}
+  - component: {fileID: 1300904591}
   m_Layer: 8
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -92,7 +93,7 @@ Transform:
   m_GameObject: {fileID: 1750387067}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.841, y: -2.179, z: 0}
-  m_LocalScale: {x: 0.276, y: 0.237, z: 1}
+  m_LocalScale: {x: 0.27, y: 0.27, z: 1}
   m_Children:
   - {fileID: 6804232605354657772}
   - {fileID: 7333726224226533014}
@@ -179,7 +180,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1750387067}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c0474cded5645d14aa01df9757c69b9e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -205,7 +206,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1750387067}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c0474cded5645d14aa01df9757c69b9e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -264,6 +265,8 @@ MonoBehaviour:
   moveSpeed: 7
   nbFrameBetweenShots: 20
   bulletSpawn: {fileID: 494882408}
+  bullet: {fileID: 0}
+  speedBullet: 0
   nbPointsCourbeShoot: 20
   lineRenderer: {fileID: 0}
   groundCheck: {fileID: 6804232605354657772}
@@ -278,6 +281,25 @@ MonoBehaviour:
   jumpPushForce: 10
   wallJumpForce: 700
   wallJumpPushForce: 10
+--- !u!95 &1300904591
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750387067}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b641095603f693c4da4c0cd123acb44c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3067699099256115151
 GameObject:
   m_ObjectHideFlags: 0

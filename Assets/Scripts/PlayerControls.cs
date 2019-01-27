@@ -7,6 +7,8 @@ public class PlayerControls : MonoBehaviour {
     public float moveSpeed = 10f;
     public int nbFrameBetweenShots;
     public Transform bulletSpawn;
+    public GameObject bullet;
+    public float speedBullet;
     public int nbPointsCourbeShoot;
     public LineRenderer lineRenderer;
     [SerializeField] Transform groundCheck;
@@ -32,21 +34,27 @@ public class PlayerControls : MonoBehaviour {
     private int framesSinceWallTouch = 5;
     private int framesSinceLastWallJump = 0;
     private int framesSinceLastShoot;
-    
-    /**
 
-        If he touches the wall for the first time we store his direction
-        The player can then only wall jump if he faces the opposite direction
-
-    **/
+    private Animator animator;
 
     // Use this for initialization
     void Start() {
         framesSinceLastShoot = nbFrameBetweenShots;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void FixedUpdate() {
+
+        // TESTS
+        if (Input.GetKeyDown(KeyCode.A)) {
+            GameObject.Find("HouseDoor").GetComponent<Animator>().SetTrigger("Open");
+            //GameObject.Find("GardenDoor").GetComponent<Animator>().ResetTrigger("Close");
+        }
+        else if (Input.GetKeyDown(KeyCode.E)) {
+            GameObject.Find("HouseDoor").GetComponent<Animator>().SetTrigger("Close");
+            //GameObject.Find("GardenDoor").GetComponent<Animator>().ResetTrigger("Open");
+        }
 
         // The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
@@ -78,6 +86,12 @@ public class PlayerControls : MonoBehaviour {
         framesSinceLastWallJump++;
 
         float move = Input.GetAxis("Horizontal");
+
+        // We are moving
+        if(Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+            animator.SetTrigger("Move");
+        else
+            animator.SetTrigger("Idle");
         
         GetComponent<Rigidbody2D>().velocity = new Vector2(move * moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
@@ -96,7 +110,7 @@ public class PlayerControls : MonoBehaviour {
         // If the jump button is pressed and the player is grounded then the player should jump.
         if ((grounded /*|| !doubleJump*/) && Input.GetButtonDown("Jump")) {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
-
+            animator.SetTrigger("Jump");
             // Decomment this if we only want to bounce once off the wall
             /*
             if (!doubleJump && !grounded) {
@@ -112,18 +126,22 @@ public class PlayerControls : MonoBehaviour {
             framesSinceWallTouch = 15;
         }
 
+        printLineShooting();
         if (GetComponent<PlayerStatus>().bananaMode && framesSinceLastShoot > nbFrameBetweenShots)//&& Input.GetButtonDown("Fire1")
         {
-            printLineShooting();
+            
+            if (Input.GetButtonDown("Fire1"))
+            {
+                BananaShoot();
+            }
             //BananaShoot();
         }
     }
 
-    public void printLineShooting()
+    public Vector3[] printLineShooting()
     {
         const float maxAltitude = 2.0f;
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        print(mousePos);
         Vector3 vectorDistance = mousePos - bulletSpawn.transform.position;
         float distance = vectorDistance.magnitude;
         //Vector3 vectorDistanceNormalized = vectorDistance.normalized;
@@ -140,12 +158,16 @@ public class PlayerControls : MonoBehaviour {
         }
         lineRenderer.positionCount = pointCasteljau.Count;
         lineRenderer.SetPositions(pointCasteljau.ToArray());
+
+        return listControlPoints;
     }
 
     public void BananaShoot()
     {
         //Shoot
-
+        Vector3[] controlesPoints = printLineShooting();
+        GameObject newBullet = GameObject.Instantiate(bullet);
+        newBullet.GetComponent<Bullet>().initialyseBullet(speedBullet,controlesPoints);
         framesSinceLastShoot = 0;
     }
 

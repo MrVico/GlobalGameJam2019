@@ -15,6 +15,7 @@ TagManager:
   - Water
   - Box
   - Secret
+  - Key
   layers:
   - Default
   - TransparentFX

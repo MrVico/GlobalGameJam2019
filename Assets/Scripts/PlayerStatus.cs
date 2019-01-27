@@ -18,6 +18,8 @@ public class PlayerStatus : MonoBehaviour
     private int hp;
     private int iterInvincibility = 0;
 
+    public bool hasKey = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -115,6 +117,12 @@ public class PlayerStatus : MonoBehaviour
                 gm.spawnPlayer();
             else
                 GameOver();
+        }
+
+        if (collider.tag.Equals("Key"))
+        {
+            Destroy(collider.gameObject);
+            GameObject.Find("Door").GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 
