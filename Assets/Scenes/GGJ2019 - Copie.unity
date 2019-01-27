@@ -1601,11 +1601,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2155474066458453679, guid: 0c5c8f2f9be23c149bbf0c1f4cfba3e3,
-        type: 3}
-      propertyPath: orthographic size
-      value: 3.7242022
-      objectReference: {fileID: 0}
     - target: {fileID: 2155474066458453677, guid: 0c5c8f2f9be23c149bbf0c1f4cfba3e3,
         type: 3}
       propertyPath: target
@@ -1630,6 +1625,11 @@ PrefabInstance:
         type: 3}
       propertyPath: maxY
       value: 9.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 2155474066458453679, guid: 0c5c8f2f9be23c149bbf0c1f4cfba3e3,
+        type: 3}
+      propertyPath: orthographic size
+      value: 3.7242022
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c5c8f2f9be23c149bbf0c1f4cfba3e3, type: 3}
@@ -3137,10 +3137,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: OptionsMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 787695707, guid: 6803ec03666b8e54986b571a96564f20, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 787695708, guid: 6803ec03666b8e54986b571a96564f20, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3224,10 +3220,6 @@ PrefabInstance:
     - target: {fileID: 787695708, guid: 6803ec03666b8e54986b571a96564f20, type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 215979841, guid: 6803ec03666b8e54986b571a96564f20, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 1.5011902
       objectReference: {fileID: 0}
     - target: {fileID: 215979843, guid: 6803ec03666b8e54986b571a96564f20, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

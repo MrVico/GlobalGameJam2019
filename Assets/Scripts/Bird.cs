@@ -37,4 +37,22 @@ public class Bird : MonoBehaviour
     private void FlyAway() {
         heightModifier = 1f;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag.Equals("Finish"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    /*
+private void OnTriggerEnter2D(Collider2D collision)
+{
+    if (collision.tag.Equals("Finish"))
+    {
+        Destroy(gameObject);
+    }
+}*/
+
 }

@@ -40,9 +40,8 @@ public class FinishScript : MonoBehaviour
 
     public void goToNextScene()
     {
-<<<<<<< HEAD
-        SceneManager.LoadScene(nextSceneName);
-=======
+
+
         StartCoroutine(fadeOut());
     }
 
@@ -55,7 +54,6 @@ public class FinishScript : MonoBehaviour
             fadeQuad.GetComponent<MeshRenderer>().material.color = fadeColor;
             yield return null;
         }
-        SceneManager.LoadScene("Niveau1");
->>>>>>> 648c7bea406d393428f0b7693e3a1b63443b890b
+        SceneManager.LoadScene(nextSceneName);
     }
 }
