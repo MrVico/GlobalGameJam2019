@@ -7,6 +7,7 @@ public class FinishScript : MonoBehaviour
 {
     public bool collideWithPlayer;
     public GameObject player;
+    public string nextSceneName;
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +22,9 @@ public class FinishScript : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.collider.tag == "Player")
+        if (collider.tag == "Player")
         {
             goToNextScene();
         }
@@ -37,6 +38,6 @@ public class FinishScript : MonoBehaviour
 
     public void goToNextScene()
     {
-        SceneManager.LoadScene("Niveau1");
+        SceneManager.LoadScene(nextSceneName);
     }
 }
